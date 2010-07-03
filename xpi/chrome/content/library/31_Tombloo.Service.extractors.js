@@ -1262,7 +1262,7 @@ Tombloo.Service.extractors = new Repository([
 			return ctx.host.match('youtube.com');
 		},
 		extract : function(ctx){
-			var author = $x('id("watch-channel-stats")/a');
+			var author = $x('id("watch-username")');
 			ctx.title = ctx.title.replace(/[\n\r\t]+/gm, ' ').trim();
 			
 			return {

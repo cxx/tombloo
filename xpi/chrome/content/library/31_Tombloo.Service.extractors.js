@@ -354,7 +354,7 @@ Tombloo.Service.extractors = new Repository([
 		},
 		extract : function(ctx){
 			ctx.href = this.normalizeUrl(ctx.host, this.getAsin(ctx));
-			ctx.title = 'Amazon: ' + $x('id("prodImage")/@alt') + ': ' + ctx.document.title.split(/[：:] */).slice(-2).shift();
+			ctx.title = 'Amazon: ' + $x('id("prodImageCell")//img/@alt') + ': ' + ctx.document.title.split(/[：:] */).slice(-2).shift();
 		},
 	},
 	

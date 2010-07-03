@@ -368,7 +368,10 @@ Tombloo.Service.extractors = new Repository([
 			Tombloo.Service.extractors.Amazon.extract(ctx);
 			
 			var url = ctx.target.src.split('.');
-			url.splice(-2, 1, 'LZZZZZZZ');
+			if(url[0].indexOf('http://g-ec') == 0)
+				url.splice(-2, 1);
+			else
+				url.splice(-2, 1, 'LZZZZZZZ');
 			url = url.join('.');
 			
 			with(ctx.target){

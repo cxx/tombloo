@@ -362,7 +362,7 @@ Tombloo.Service.extractors = new Repository([
 		name : 'Photo - Amazon',
 		ICON : 'http://www.amazon.com/favicon.ico',
 		check : function(ctx){
-			return Tombloo.Service.extractors.Amazon.preCheck(ctx) && ctx.target.id == 'prodImage';
+			return Tombloo.Service.extractors.Amazon.preCheck(ctx) && $x('./ancestor::td[@id="prodImageCell"]', ctx.target);
 		},
 		extract : function(ctx){
 			Tombloo.Service.extractors.Amazon.extract(ctx);
